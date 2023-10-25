@@ -19,8 +19,31 @@ console.log(myInnerString);
 
 imageElem.innerHTML += myInnerString
 
-// MANIPOLAZIONE ELEMENTI : MOSTRARE IMMAGINI
+// MANIPOLAZIONE ELEMENTI: MOSTRARE IMMAGINI
 
 const itemElem = document.querySelectorAll(".item")
 console.log(itemElem)
+
+
+let currentImageIndex = 0;
+itemElem[currentImageIndex].classList.add("active");
+console.log(itemElem);
+
+
+document.querySelector(".next").addEventListener("click", function () {
+    if (currentImageIndex < itemElem.length - 1) {
+        itemElem[currentImageIndex].classList.remove("active");
+        currentImageIndex++;
+        itemElem[currentImageIndex].classList.add("active");
+    }
+})
+
+document.querySelector(".prev").addEventListener("click", function(){
+if (currentImageIndex > 0) {
+    itemElem[currentImageIndex].classList.remove("active")
+    currentImageIndex--
+    itemElem[currentImageIndex].classList.add("active")
+    }
+})
+
 
